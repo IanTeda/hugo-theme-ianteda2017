@@ -1,7 +1,6 @@
 'use strict';
 
 let autoprefixer = require('autoprefixer');
-let cssnext = require('postcss-cssnext');
 let lost = require('lost');
 let magician = require('postcss-font-magician');
 let mqpacker = require('css-mqpacker');
@@ -12,6 +11,7 @@ let sprites = require('postcss-sprites');
 const hstatic = 'static/';
 const nodeModules = 'node_modules/';
 const src = 'src/';
+const themeName = 'ianteda2017';
 
 module.exports = {
   fonts: {
@@ -97,7 +97,6 @@ module.exports = {
       autoprefixer({
         browsers: ['last 3 version'],
       }),
-      cssnext,
       lost,
       magician,
       mqpacker,
@@ -107,7 +106,7 @@ module.exports = {
   },
   scripts: {
     extensions: '*.js',
-    filename: 'hasper.js',
+    filename: themeName + '.js',
     src: [
       nodeModules + 'jquery/dist/jquery.js',
       src + 'scripts/main.js',
@@ -116,11 +115,11 @@ module.exports = {
   },
   styles: {
     extensions: '*.css',
-    filename: 'hasper.css',
+    filename: themeName + '.css',
     src: [
       nodeModules + '/animate.css/animate.css',
       nodeModules + '/font-awesome/css/font-awesome.css',
-      src + 'styles/screen.css',
+      src + 'styles/main.css',
     ],
     dest: hstatic + 'styles',
   },

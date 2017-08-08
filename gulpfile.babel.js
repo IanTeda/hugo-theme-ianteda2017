@@ -194,4 +194,4 @@ gulp.task('hugo', requireTask('hugo'));
 
 gulp.task('development', gulp.series('build', 'watch'));
 
-gulp.task('default', gulp.parallel('development', 'hugo'));
+gulp.task('default', gulp.parallel('development'));
