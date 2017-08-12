@@ -15,7 +15,7 @@
   </body>
 
   <!-- Load themes Javascript file -->
-  <script src='{{ .Site.BaseURL }}scripts/{{ index .Site.Data.hash "ianteda2017.js" }}'></script>
+  <script src='{{ .Site.BaseURL }}scripts/{{ index .Site.Data.hash "ianteda2017.min.js" }}'></script>
   
   <!-- Include Internal Google Analytics Template, if not localhost -->
   {{ if ne (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
