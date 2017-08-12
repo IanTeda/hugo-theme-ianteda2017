@@ -29,7 +29,7 @@ module.exports = (gulp, config, argv, $) => {
       .pipe(gulp.dest(config.images.dest))
 
       // Create hash map of images
-      .pipe($.hash.manifest('hash-images.json'))
+      .pipe($.hash.manifest('hash.json'))
       // Write has map to /data folder
       .pipe(gulp.dest('data'))
       .on('end', function() {

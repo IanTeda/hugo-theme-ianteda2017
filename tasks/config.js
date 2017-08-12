@@ -1,6 +1,7 @@
 'use strict';
 
 let autoprefixer = require('autoprefixer');
+let cssnano = require('cssnano');
 let lost = require('lost');
 let magician = require('postcss-font-magician');
 let mqpacker = require('css-mqpacker');
@@ -97,6 +98,7 @@ module.exports = {
       autoprefixer({
         browsers: ['last 3 version'],
       }),
+      cssnano,
       lost,
       magician,
       mqpacker,
@@ -117,6 +119,7 @@ module.exports = {
     extensions: '*.css',
     filename: themeName + '.css',
     src: [
+      nodeModules + '/normalize.css/normalize.css',
       nodeModules + '/animate.css/animate.css',
       nodeModules + '/font-awesome/css/font-awesome.css',
       src + 'styles/main.css',

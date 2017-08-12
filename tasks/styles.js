@@ -14,6 +14,9 @@ module.exports = (gulp, config, argv, $) => {
       // CSS source files.
       .src(config.styles.src)
 
+      // Use source maps for debugging
+      .pipe($.sourcemaps.init())
+
       // Concatenate css, since order is important
       .pipe($.concat(config.styles.filename))
       .pipe($.size({title: 'Style concatenated into one file:'}))
@@ -22,9 +25,8 @@ module.exports = (gulp, config, argv, $) => {
       .pipe($.postcss(config.postcss.processors))
       .pipe($.size({title: 'postCSS:'}))
 
-      // Write source maps for easier debugging, since we are concatenating
-      .pipe($.sourcemaps.write('./'))
-      .pipe($.size({title: 'Style source maps written:'}))
+      // Rename to 'min' since we have minified
+      .pipe($.rename({suffix: '.min'}))
 
       // Add hash to concatenated script file
       .pipe($.hash())
@@ -32,15 +34,19 @@ module.exports = (gulp, config, argv, $) => {
         $.util.log('Hash added to concatenated styles');
       })
 
+      // Write source maps for easier debugging
+      .pipe($.sourcemaps.write('.'))
+      .pipe($.size({title: 'Source maps written:'}))
+
       // Write stream to drive
       .pipe(gulp.dest(config.styles.dest))
 
       // Create hash map of script
-      .pipe($.hash.manifest('hash-styles.json'))
+      .pipe($.hash.manifest('hash.json'))
       .pipe(gulp.dest('data'))
       .on('end', function() {
         $.util.log(
-          'Style hash-map "hash-styles.json" written to "/data" folder'
+          'Style hashes added to hash.json in /data folder'
         );
       });
 

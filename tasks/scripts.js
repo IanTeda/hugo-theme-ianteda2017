@@ -13,9 +13,18 @@ module.exports = (gulp, config, argv, $) => {
       // JavaScript source files. Order of important and set in config.
       .src(config.scripts.src)
 
+      // Use source maps for debugging
+      .pipe($.sourcemaps.init())
+
       // Concatenate source files.
       .pipe($.concat(config.scripts.filename))
       .pipe($.size({title: 'Scripts concatenated into one file:'}))
+
+      // Remove white space
+      .pipe($.uglify())
+
+      // Rename to 'min' since we have minified
+      .pipe($.rename({suffix: '.min'}))
 
       // Add hash to concatenated script file
       .pipe($.hash())
@@ -23,14 +32,18 @@ module.exports = (gulp, config, argv, $) => {
         $.util.log('Hash added to concatenated script');
       })
 
+      // Write source maps for easier debugging
+      .pipe($.sourcemaps.write('.'))
+      .pipe($.size({title: 'Source maps written:'}))
+
       // Write stream to destination folder
       .pipe(gulp.dest(config.scripts.dest))
 
       // Create hash map of script
-      .pipe($.hash.manifest('hash-scripts.json'))
+      .pipe($.hash.manifest('hash.json'))
       .pipe(gulp.dest('data'))
       .on('end', function() {
-        $.util.log('Script hash-map "hash-scripts.json" written to "/data" folder');
+        $.util.log('Script hashes added to hash.json in /data folder');
       });
 
     return stream;

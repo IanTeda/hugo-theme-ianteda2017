@@ -1,8 +1,7 @@
-<!-- Start /themes/ianteda2017/layouts/_default/baseof.html-->
 <!DOCTYPE html>
 <html>
 
-  <!-- Standard head -->
+  <!-- Default Page Head -->
   {{ partial "head.html" . }}
 
   <body>
@@ -10,9 +9,17 @@
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
-    {{ block "footer" . }}
-    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-    {{ end }}
+
+    <!-- Default Footer -->
+    {{ partial "footer.html"}}
   </body>
-</html>
-<!-- End /themes/ianteda2017/layouts/_default/baseof.html-->
+
+  <!-- Load themes Javascript file -->
+  <script src='{{ .Site.BaseURL }}scripts/{{ index .Site.Data.hash "ianteda2017.js" }}'></script>
+  
+  <!-- Include Internal Google Analytics Template, if not localhost -->
+  {{ if ne (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
+
+  </html>
