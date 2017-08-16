@@ -1,13 +1,6 @@
 'use strict';
 
-let autoprefixer = require('autoprefixer');
-let cssnano = require('cssnano');
-let lost = require('lost');
-let magician = require('postcss-font-magician');
-let mqpacker = require('css-mqpacker');
 let pngquant = require('imagemin-pngquant');
-let postImport = require('postcss-import');
-let sprites = require('postcss-sprites');
 
 const hstatic = 'static/';
 const nodeModules = 'node_modules/';
@@ -51,19 +44,20 @@ module.exports = {
       config: {
         '*': [
           {
-            width: 480,
-            rename: {suffix: '-sm'},
+            width: 576,
+            rename: {suffix: '@mobile'},
             withoutEnlargement: true,
           }, {
-            width: 480 * 2,
-            rename: {suffix: '-sm@2x'},
+            width: 768,
+            rename: {suffix: '@tablet'},
             withoutEnlargement: true,
           }, {
-            width: 675,
+            width: 992,
+            rename: {suffix: '@desktop'},
             withoutEnlargement: true,
           }, {
-            width: 675 * 2,
-            rename: {suffix: '@2x'},
+            width: 1200,
+            rename: {suffix: '@highres'},
             withoutEnlargement: true,
           },
         ],
@@ -95,15 +89,16 @@ module.exports = {
   },
   postcss: {
     processors: [
-      autoprefixer({
-        browsers: ['last 3 version'],
-      }),
-      cssnano,
-      lost,
-      magician,
-      mqpacker,
-      postImport,
-      sprites,
+      require('postcss-import'),
+      require('postcss-nested'),
+      require('postcss-mixins'),
+      require('postcss-simple-vars'),
+      require('lost'),
+      require('css-mqpacker'),
+      require('postcss-sprites'),
+      require('postcss-font-magician'),
+      require('autoprefixer'),
+      require('cssnano'),
     ],
   },
   scripts: {
@@ -116,12 +111,9 @@ module.exports = {
     dest: hstatic + 'scripts',
   },
   styles: {
-    extensions: '*.css',
+    extensions: 'src/styles/**/*',
     filename: themeName + '.css',
     src: [
-      nodeModules + '/normalize.css/normalize.css',
-      nodeModules + '/animate.css/animate.css',
-      nodeModules + '/font-awesome/css/font-awesome.css',
       src + 'styles/main.css',
     ],
     dest: hstatic + 'styles',

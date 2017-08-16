@@ -1,1 +1,11 @@
-/** Comment */
+/* Import from node modules */
+@import 'normalize.css';
+@import 'animate.css';
+@import 'font-awesome';
+
+/* Import variables */
+@import './variables.css';
+
+@import './lostgrid.css';
+
+

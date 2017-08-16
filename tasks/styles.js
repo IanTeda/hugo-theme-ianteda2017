@@ -25,7 +25,7 @@ module.exports = (gulp, config, argv, $) => {
       .pipe($.postcss(config.postcss.processors))
       .pipe($.size({title: 'postCSS:'}))
 
-      // Rename to 'min' since we have minified
+      // Rename to 'min' since we have minification
       .pipe($.rename({suffix: '.min'}))
 
       // Add hash to concatenated script file
