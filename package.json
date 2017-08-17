@@ -83,6 +83,7 @@
     "postcss-import": "^10.0.0",
     "postcss-mixins": "^6.0.1",
     "postcss-nested": "^2.1.2",
+    "postcss-responsive-type": "^1.0.0",
     "postcss-simple-vars": "^4.0.0",
     "postcss-sprites": "^4.2.1",
     "require-dir": "^0.3.0",

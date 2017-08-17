@@ -6,6 +6,10 @@
 /* Import variables */
 @import './variables.css';
 
+/* Typography */
+@import './typography.css';
+
+/* Layout */
 @import './lostgrid.css';
 
 

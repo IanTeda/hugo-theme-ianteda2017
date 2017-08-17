@@ -96,6 +96,7 @@ module.exports = {
       require('lost'),
       require('css-mqpacker'),
       require('postcss-sprites'),
+      require('postcss-responsive-type'),
       require('postcss-font-magician'),
       require('autoprefixer'),
       require('cssnano'),
