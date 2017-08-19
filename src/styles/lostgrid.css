@@ -1,25 +1,25 @@
-/** Extra small devices (portrait phones, less than 576px) **/
-/** No media query since this is the default **/
-#index-container {
+/* Lets not float, but flex. Global flex box setting */
+@lost flexbox flex
+
+body {
+    display: flex;
+    border-radius: 50%;
+    transform: translateX(10px);
+    lost-utility: overlay 1600px 12 20px #ccc;
+}
+
+section, header {
     lost-utility: edit;
 }
 
-/** Small devices (landscape phones, 576px and up) **/
-@media (min-width: 576px) {
 
-}
-
-/** Medium devices (tablets, 768px and up) **/
-@media (min-width: 768px) {
-
-}
-
-/** Large devices (desktops, 992px and up) **/
-@media (min-width: 992px) {
-
-}
-
-/** Extra large devices (large desktops, 1200px and up) **/
-@media (min-width: 1200px) {
-    
+#index {
+    position:relative;
+    header {
+        width: 100%;
+        div {
+            lost-column: 1/2;
+            height: 100vh;
+        }
+    }
 }

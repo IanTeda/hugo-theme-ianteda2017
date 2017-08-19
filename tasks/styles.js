@@ -21,6 +21,12 @@ module.exports = (gulp, config, argv, $) => {
       .pipe($.concat(config.styles.filename))
       .pipe($.size({title: 'Style concatenated into one file:'}))
 
+      .pipe($.stylelint({
+        reporters: [
+          {formatter: 'string', console: true},
+        ],
+      }))
+
       // Apply PostCSS processors to the stream
       .pipe($.postcss(config.postcss.processors))
       .pipe($.size({title: 'postCSS:'}))

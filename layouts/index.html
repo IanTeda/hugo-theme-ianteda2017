@@ -1,41 +1,22 @@
-{{ define "main" }}
-<!-- Inherit from main block defined in baseof.html -->
-<div id="index-container">
+{{ define "body" }}
+<!-- Inherit from body block defined in baseof.html -->
 
-  <header id="index-header">
+<!-- Container div for index -->
 
-      <div class="content">
-          <!-- Web Site Title -->
-          <h1>Ian Teda</h1>
+<div id="index">
+    <header id="index-header">
+        <div id="index-header-image">1</div>
+        <div id="index-header-pitch">2</div>
+    </header>
 
-          <!-- Story -->
-          <p class="major">
-            I choose to be authentic through honesty, integrity and transparency. With a spirit for creativity, imagination and adventure. Seeking personal growth by being curious, learning and reflecting. Looking for freedom through the discipline of habit. But most of all I am trying to be useful by adding value in what I do.
-            <strong>
-              – Ian Teda
-            </strong>
-          </p>
+    <section>
+        Story
+    </section>
 
-          <p>
-            I have always enjoyed a good adventure, and cannot help but wonder what is around the next bend. The most rewarding adventure for me at the moment is raising my two young boys – Austin and Dillan, that I share with my beautiful wife Laura.
-          </p>
-          
-          <ul class="actions vertical">
-            <li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
-          </ul>
-        </div>
-        
-        <div class="image">
-            <img
-            sizes="(min-width: 36em) 576w, 768w, 992w, 1200w"
-            srcset="
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@mobile.jpg" }} 576w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@tablet.jpg" }} 768w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@desktop.jpg" }} 992w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w"
-            alt="Ian Teda in the jumpform of the intake tower">
-        </div>
-  </header>
+    <section>
+        What I do
+    </section>
 </div>
-    
+
+
 {{ end }}

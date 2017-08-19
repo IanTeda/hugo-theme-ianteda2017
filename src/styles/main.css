@@ -1,13 +1,8 @@
 /* Import from node modules */
 @import 'normalize.css';
-@import 'animate.css';
-@import 'font-awesome';
 
-/* Import variables */
+/* Import variables from project*/
 @import './variables.css';
-
-/* Typography */
-@import './typography.css';
 
 /* Layout */
 @import './lostgrid.css';
