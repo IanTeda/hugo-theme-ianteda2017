@@ -78,6 +78,7 @@
     "imagemin-pngquant": "^5.0.0",
     "jsdoc": "^3.4.0",
     "lost": "^8.2.0",
+    "materialize-css": "^0.100.1",
     "normalize.css": "^7.0.0",
     "npm-check-updates": "^2.5.8",
     "postcss-cssnext": "^3.0.2",
