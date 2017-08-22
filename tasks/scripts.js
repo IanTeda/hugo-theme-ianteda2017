@@ -13,6 +13,8 @@ module.exports = (gulp, config, argv, $) => {
       // JavaScript source files. Order of important and set in config.
       .src(config.scripts.src)
 
+      .pipe($.babel({presets: ['es2015']}))
+
       // Use source maps for debugging
       .pipe($.sourcemaps.init())
 
@@ -21,7 +23,9 @@ module.exports = (gulp, config, argv, $) => {
       .pipe($.size({title: 'Scripts concatenated into one file:'}))
 
       // Remove white space
-      .pipe($.uglify())
+      .pipe($.uglify().on('error', function(e) {
+        console.log(e);
+      }))
 
       // Rename to 'min' since we have minified
       .pipe($.rename({suffix: '.min'}))

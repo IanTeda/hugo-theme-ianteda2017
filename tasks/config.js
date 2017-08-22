@@ -102,17 +102,26 @@ module.exports = {
       require('cssnano'),
     ],
   },
+  sass: {
+    extensions: 'src/sass/**/*.scss',
+    filename: 'materialize.css',
+    src: [
+      src + 'sass/materialize.scss',
+    ],
+    dest: src + 'styles/',
+  },
   scripts: {
-    extensions: '*.js',
+    extensions: 'src/scripts/**/*.js',
     filename: themeName + '.js',
     src: [
-      nodeModules + 'jquery/dist/jquery.js',
+      src + 'scripts/jquery-3.2.1.js',
+      src + 'scripts/materialize.js',
       src + 'scripts/main.js',
     ],
     dest: hstatic + 'scripts',
   },
   styles: {
-    extensions: 'src/styles/**/*',
+    extensions: 'src/styles/**/*.css',
     filename: themeName + '.css',
     src: [
       src + 'styles/main.css',

@@ -94,6 +94,32 @@ gulp.task(
 );
 
 /**
+ * SASS TASKS
+ * Usage: gulp sass:clean  - Clean main.js from the JavaScripts build folder
+ * Usage: gulp sass:build  - Build main.js from source into build folder
+ * Usage: gulp sass        - Clean build folder, then build from source into build folder
+*/
+gulp.task(
+  'sass:clean',
+  requireCleanTask(
+    config.sass.dest + config.sass.filename
+  )
+);
+gulp.task(
+  'sass:build',
+  requireTask(
+    'sass'
+  )
+);
+gulp.task(
+  'sass',
+  gulp.series(
+    'sass:clean',
+    'sass:build'
+  )
+);
+
+/**
  * SCRIPT TASKS
  * Usage: gulp scripts:clean  - Clean main.js from the JavaScripts build folder
  * Usage: gulp scripts:build  - Build main.js from source into build folder
@@ -165,6 +191,11 @@ gulp.task('watch:images', () => {
   gulp.watch(config.images.extensions, gulp.series('images'));
 });
 
+// Watch for sass changes
+gulp.task('watch:sass', () => {
+  gulp.watch(config.sass.extensions, gulp.series('sass'));
+});
+
 // Watch for script changes
 gulp.task('watch:scripts', () => {
   gulp.watch(config.scripts.extensions, gulp.series('scripts'));
@@ -175,20 +206,13 @@ gulp.task('watch:styles', () => {
   gulp.watch(config.styles.extensions, gulp.series('styles'));
 });
 
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:scripts', 'watch:styles'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:images', 'watch:sass', 'watch:scripts', 'watch:styles'));
 
 /**
  * MAIN TASKS
  */
 
-// Watch for script changes
-gulp.task('hugo', () => {
-  gulp.src('../../gulpfile.babel.js')
-    .pipe(plugins.chug());
-});
-
-
-gulp.task('build', gulp.parallel('fonts', 'images', 'scripts', 'styles'));
+gulp.task('build', gulp.parallel('fonts', 'images', 'sass', 'scripts', 'styles'));
 
 gulp.task('hugo', requireTask('hugo'));
 
