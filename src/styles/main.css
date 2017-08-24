@@ -1,6 +1,5 @@
 /* Import from node modules */
 @import 'normalize.css';
-@import 'bootstrap';
 
 /* Import variables from project*/
 @import './variables.css';

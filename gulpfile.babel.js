@@ -193,7 +193,7 @@ gulp.task('watch:images', () => {
 
 // Watch for sass changes
 gulp.task('watch:sass', () => {
-  gulp.watch(config.sass.extensions, gulp.series('sass'));
+  gulp.watch(config.sass.extensions, gulp.series('sass:build'));
 });
 
 // Watch for script changes

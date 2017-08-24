@@ -2,37 +2,21 @@
 <!-- Inherit from body block defined in baseof.html -->
 
 <!-- Container div for index -->
-
 <div id="index">
+
+    <!-- Nav menu partial -->
+    {{ partial "navmenu.html"}}
+
     <header id="index-header">
         <div id="index-header-image">
-            <img
-            sizes="(min-width: 36em) 576w, 768w, 992w, 1200w"
-            srcset="
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@mobile.jpg" }} 576w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@tablet.jpg" }} 768w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@desktop.jpg" }} 992w,
-                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg" }} 1200w"
-            alt="Ian Teda in the jumpform of the intake tower">
+            <img sizes="(min-width: 36em) 576w, 768w, 992w, 1200w" srcset="
+                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash " cover-intake-profile@mobile.jpg " }} 576w,
+                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@tablet.jpg " }} 768w,
+                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@desktop.jpg " }} 992w,
+                  {{ .Site.BaseURL }}images/{{ index .Site.Data.hash "cover-intake-profile@highres.jpg " }} 1200w" alt="Ian Teda in the jumpform of the intake tower">
         </div>
         <div id="index-header-pitch">
-                <ul id="slide-out" class="side-nav">
-                        <li><div class="user-view">
-                          <div class="background">
-                            <img src="images/office.jpg">
-                          </div>
-                          <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-                          <a href="#!name"><span class="white-text name">John Doe</span></a>
-                          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                        </div></li>
-                        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                        <li><a href="#!">Second Link</a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="subheader">Subheader</a></li>
-                        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-                      </ul>
-                      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-                            
+            The pitch
         </div>
     </header>
 

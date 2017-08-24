@@ -3220,27 +3220,27 @@ nav {
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Thin), url("./fonts/Roboto/Roboto-Thin.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Thin.woff") format("woff");
+  src: local(Roboto Thin), url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff");
   font-weight: 100; }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Light), url("./fonts/Roboto/Roboto-Light.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Light.woff") format("woff");
+  src: local(Roboto Light), url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
   font-weight: 300; }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Regular), url("./fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Regular.woff") format("woff");
+  src: local(Roboto Regular), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400; }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Medium), url("./fonts/Roboto/Roboto-Medium.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Medium.woff") format("woff");
+  src: local(Roboto Medium), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
   font-weight: 500; }
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Bold), url("./fonts/Roboto/Roboto-Bold.woff2") format("woff2"), url("./fonts/Roboto/Roboto-Bold.woff") format("woff");
+  src: local(Roboto Bold), url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
   font-weight: 700; }
 
 a {
@@ -3782,7 +3782,6 @@ button.btn-floating {
 .fixed-action-btn {
   position: fixed;
   right: 23px;
-  bottom: 23px;
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 997; }
