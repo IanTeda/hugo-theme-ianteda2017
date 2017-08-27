@@ -88,6 +88,9 @@ module.exports = {
     },
   },
   postcss: {
+    dest: hstatic + 'styles',
+    extensions: 'src/styles/**/*.css',
+    filename: themeName + '.css',
     processors: [
       require('postcss-import'),
       require('postcss-nested'),
@@ -101,12 +104,15 @@ module.exports = {
       require('autoprefixer'),
       require('cssnano'),
     ],
+    src: [
+      src + 'styles/main.css',
+    ],
   },
   sass: {
     extensions: 'src/sass/**/*.scss',
-    filename: 'materialize.css',
+    filename: 'sass.css',
     src: [
-      src + 'sass/materialize.scss',
+      src + 'sass/main.scss',
     ],
     dest: src + 'styles/',
   },
@@ -114,19 +120,15 @@ module.exports = {
     extensions: 'src/scripts/**/*.js',
     filename: themeName + '.js',
     src: [
-      src + 'scripts/jquery-3.2.1.js',
-      src + 'scripts/materialize.js',
+      nodeModules + 'jquery/dist/jquery.js',
+      nodeModules + 'popper.js/dist/umd/popper.js',
+      src + 'scripts/bootstrap.js',
       src + 'scripts/main.js',
     ],
     dest: hstatic + 'scripts',
   },
   styles: {
-    extensions: 'src/styles/**/*.css',
-    filename: themeName + '.css',
-    src: [
-      src + 'styles/main.css',
-    ],
-    dest: hstatic + 'styles',
+
   },
   uglify: {
     options: {

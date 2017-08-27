@@ -1,10 +1,1 @@
-/* Import from node modules */
-@import 'normalize.css';
-
-/* Import variables from project*/
-@import './variables.css';
-
-/* Layout */
-@import './lostgrid.css';
-
-@import './materialize.css';
+@import './sass.css';

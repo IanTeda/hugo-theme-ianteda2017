@@ -17,6 +17,9 @@ module.exports = (gulp, config, argv, $) => {
         // Compile to css
         .pipe($.sass().on('error', $.sass.logError))
 
+        // Rename dest pipe output
+        .pipe($.rename(config.sass.filename))
+
         // Write stream to destination folder
         .pipe(gulp.dest(config.sass.dest));
 
