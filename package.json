@@ -82,7 +82,7 @@
     "materialize-css": "^0.100.1",
     "normalize.css": "^7.0.0",
     "npm-check-updates": "^2.5.8",
-    "popper.js": "^1.12.3",
+    "popper.js": "1.11.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-font-magician": "^2.0.0",
     "postcss-import": "^10.0.0",

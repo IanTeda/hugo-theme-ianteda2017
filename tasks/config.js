@@ -120,9 +120,6 @@ module.exports = {
     extensions: 'src/scripts/**/*.js',
     filename: themeName + '.js',
     src: [
-      nodeModules + 'jquery/dist/jquery.js',
-      nodeModules + 'popper.js/dist/umd/popper.js',
-      src + 'scripts/bootstrap.js',
       src + 'scripts/main.js',
     ],
     dest: hstatic + 'scripts',
