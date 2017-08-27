@@ -4,11 +4,11 @@
   "description": "A clone of the Gasper theme for Ghost",
   "main": "index.js",
   "scripts": {
+    "build": "gulp build -prod",
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-doctor": "babel-doctor",
     "deploy": "gulp deploy -prod",
     "eslint": "eslint",
-    "build": "gulp build -prod",
     "jsdocs": "gulp jsdocs",
     "gulp": "gulp",
     "package-update": "npm-check-updates -u",
@@ -45,6 +45,8 @@
     "del": "^3.0.0",
     "eslint": "^4.3.0",
     "eslint-config-google": "^0.9.1",
+    "exports-loader": "^0.6.4",
+    "file-loader": "^0.11.2",
     "flatten": "1.0.2",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-babel": "6.1.2",
@@ -95,6 +97,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "^8.0.0",
     "vinyl-paths": "^2.1.0",
+    "webpack": "^3.5.5",
     "yargs": "^8.0.1"
   },
   "eslintConfig": {
